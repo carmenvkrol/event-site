@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var browserify = require('browserify');
 var browserSync = require('browser-sync');
 var rename = require('gulp-rename');
+var sass = require('gulp-sass');
 var transform = require('vinyl-transform');
 var uglify = require('gulp-uglify');
 
@@ -18,6 +19,12 @@ gulp.task('browserify', function() {
     .pipe(uglify())
     .pipe(rename('bundle.js'))
     .pipe(gulp.dest('./static/scripts'));
+});
+
+gulp.task('sass', function () {
+  gulp.src('./static/sass/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('./static/css'));
 });
 
 //*** SERVER TASKS ***//
