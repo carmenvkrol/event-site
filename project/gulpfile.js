@@ -30,9 +30,21 @@ gulp.task('sass', function () {
 //*** SERVER TASKS ***//
 
 gulp.task('runserver', function() {
+    var exec = require('child_process').exec;
     browserSync({
       notify: false,
       proxy: "127.0.0.1:5000"
     });
     var proc = exec('python ../project/app.py');
+});
+
+gulp.task('server', function() {
+  gulp.start('runserver');
+});
+
+gulp.task('client', function() {
+  gulp.start('browserify');
+  gulp.start('sass');
+  gulp.watch('static/scripts/**/*.js', ['browserify']);
+  gulp.watch(['static/sass/*scss'], ['sass']);
 });
