@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var browserify = require('browserify');
 var browserSync = require('browser-sync');
 var rename = require('gulp-rename');
+var run = require('gulp-run');
 var sass = require('gulp-sass');
 var transform = require('vinyl-transform');
 var uglify = require('gulp-uglify');
@@ -19,6 +20,10 @@ gulp.task('browserify', function() {
     .pipe(uglify())
     .pipe(rename('bundle.js'))
     .pipe(gulp.dest('./static/scripts'));
+});
+
+gulp.task('jest', function() {
+  return run('npm run-script test').exec();
 });
 
 gulp.task('sass', function () {
@@ -47,4 +52,9 @@ gulp.task('client', function() {
   gulp.start('sass');
   gulp.watch('static/scripts/**/*.js', ['browserify']);
   gulp.watch(['static/sass/*scss'], ['sass']);
+});
+
+gulp.task('test', function() {
+  gulp.start('browserify');
+  gulp.start('jest');
 });
