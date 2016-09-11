@@ -10,12 +10,12 @@ var DesktopContainer = React.createClass({
   render: function() {
     return (
       <div>
-        Desktop Version
         <Landing />
         <GeneralInfo />
         <RSVP />
         <Travel />
         <WeekendEvents />
+        <footer>Carmen V. Krol &copy; Copyright 2016</footer>
       </div>
     )
   }

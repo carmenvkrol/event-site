@@ -1,0 +1,36 @@
+.landing {
+  height: 100vh;
+  background-image: url('img/jellies.jpg');
+  background-size: 100vw;
+  background-repeat: no-repeat;
+  overflow-y: hidden;
+  @media screen and (max-width: $ipad) {
+    background-position: center top;
+  }
+  &__overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background: $blue;
+    opacity: 0.7;
+  }
+  &__wording {
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    width: 80%;
+    font-family: $title-font;
+    text-align: center;
+    color: $yellow;
+    @include vertical-align();
+  }
+  &__name-wording {
+    font-size: 3.6em;
+  }
+  &__date-wording {
+    font-size: 3em;
+  }
+}

@@ -1,0 +1,19 @@
+.weekend-events {
+  height: 100vh;
+  text-align: center;
+  &__header {
+    @include section-header();
+  }
+  &__detail-container {
+    @include column-container();
+  }
+  &__friday-container {
+    @include column-left();
+  }
+  &__saturday-container {
+    @include column-right();
+  }
+  &__sub-header {
+    @include sub-header();
+  }
+}

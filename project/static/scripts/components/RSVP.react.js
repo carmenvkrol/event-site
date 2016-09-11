@@ -1,4 +1,5 @@
 var React = require('react');
+var classNames = require('classnames');
 
 var RSVPActions = require('../actions/RSVPActions');
 
@@ -37,20 +38,33 @@ var RSVP = React.createClass({
     var complete = this.state.complete;
     var status = this.state.status;
     var firstNameError = this.checkIncomplete('firstName');
+    var firstNameClasses = classNames({
+      'rsvp__first-name-input': true,
+      'rsvp__error-input': firstNameError
+    });
     var lastNameError = this.checkIncomplete('lastName');
+    var lastNameClasses = classNames({
+      'rsvp__last-name-input': true,
+      'rsvp__error-input': lastNameError
+    });
     var attendError = this.checkIncomplete('attend');
+    var attendClasses = classNames({
+      'rsvp__checkbox-container': true,
+      'rsvp__error-attend': attendError
+    });
 
     if (status === null || status === 'loading' || status === 'error') {
 
     return (
-      <div>
-        <h1>RSVP</h1>
-        <div>
-          <p>Please fill out the following form for your RSVP.<br /><span>This form should be filled out for <strong>each</strong> guest.</span></p>
-          {status === 'error' ? <p>There was an error in processing your form.  Please try again or email carmenvkrol@gmail.com with your RSVP. </p> : null}
-          {complete === false ? <p>Please provide missing information and submit again.</p> : null}
+      <div className="rsvp">
+        <h1 className="rsvp__header">RSVP</h1>
+        <div className="rsvp__container">
+          <p className="rsvp__sub-header">Please fill out the following form for your RSVP.<br /><span className="rsvp__underline">This form should be filled out for <strong>each</strong> guest.</span></p>
+          {status === 'error' ? <p className="rsvp__error">There was an error in processing your form.  Please try again or email carmenvkrol@gmail.com with your RSVP. </p> : null}
+          {complete === false ? <p className="rsvp__error">Please provide missing information and submit again.</p> : null}
           <div>
             <input
+              className={firstNameClasses}
               name='firstName'
               type='text'
               value={this.state.firstName}
@@ -59,6 +73,7 @@ var RSVP = React.createClass({
               onBlur={this._onBlur}
             />
             <input
+              className={lastNameClasses}
               name='lastName'
               type='text'
               value={this.state.lastName}
@@ -67,10 +82,10 @@ var RSVP = React.createClass({
               onBlur={this._onBlur}
             />
           </div>
-          <div>
-            <div>Will you be attending?</div>
-            <div>
-              <label>
+          <div className={attendClasses}>
+            <div className="rsvp__checkbox-wording">Will you be attending?</div>
+            <div className="rsvp__checkbox-action-container">
+              <label className="rsvp__checkbox-label">
                 Yes
               </label>
               <label>
@@ -78,12 +93,13 @@ var RSVP = React.createClass({
                   name='yes'
                   type='checkbox'
                   checked={yesAttend}
+                  className='rsvp__checkbox'
                   onClick={this.setAttend}
                 />
-                <span>
+                <span className="rsvp__checkbox-visible">
                 </span>
               </label>
-              <label>
+              <label className="rsvp__checkbox-label">
                 No
               </label>
               <label>
@@ -91,14 +107,15 @@ var RSVP = React.createClass({
                   name='no'
                   type='checkbox'
                   checked={noAttend}
+                  className='rsvp__checkbox'
                   onClick={this.setAttend}
                 />
-                <span>
+                <span className="rsvp__checkbox-visible">
                 </span>
               </label>
             </div>
           </div>
-          <button onClick={this.submit}>
+          <button className="rsvp__button" onClick={this.submit}>
             Submit
           </button>
         </div>
@@ -107,10 +124,10 @@ var RSVP = React.createClass({
 
     } else if (status === 'done') {
       return (
-        <div>
-          <div>
+        <div className="rsvp">
+          <div className="rsvp__container-done">
             <p>Thank you! Your RSVP has been recorded.</p>
-            <button onClick={this.cleanForm}>Submit Another RSVP</button>
+            <button className="rsvp__button" onClick={this.cleanForm}>Submit Another RSVP</button>
           </div>
         </div>
       )
