@@ -8,7 +8,7 @@ var GeneralInfo = React.createClass({
     };
 
     return (
-      <div className="general-info">
+      <div id="general-info" className="general-info">
         <h1 className="general-info__header">The Main Event</h1>
         <div className="general-info__event-container">
           <h2 className="general-info__sub-header">Saturday, September 10th at 11am at Monterey Aquarium</h2>

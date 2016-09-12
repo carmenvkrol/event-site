@@ -4,7 +4,7 @@ var Travel = React.createClass({
 
   render: function() {
     return (
-      <div className="travel">
+      <div id="travel" className="travel">
         <h1 className="travel__header">Travel</h1>
         <div className="travel__detail-container">
           <div className="travel__left-container">

@@ -1,0 +1,36 @@
+.nav-desktop {
+  position: absolute;
+  z-index: 9999;
+  width: 100%;
+  &__list-container {
+    text-align: right;
+  }
+  &__list-item {
+    display: inline-block;
+    padding: 15px 10px;
+    &:last-child {
+      padding-right: 30px;
+    }
+  }
+  &__list-link {
+    text-decoration: none;
+    color: $white;
+    cursor: pointer;
+    &:hover {
+      color: $yellow;
+    }
+  }
+}
+
+.nav-desktop.body-content {
+  position: fixed;
+  transition: background-color .5s ease-in;
+  background-color: $dark-blue;
+}
+
+.nav-desktop.body-content .nav-desktop__list-link {
+  color: $white
+  &:hover {
+    color: $yellow;
+  }
+}

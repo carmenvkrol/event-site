@@ -56,7 +56,7 @@ var RSVP = React.createClass({
     if (status === null || status === 'loading' || status === 'error') {
 
     return (
-      <div className="rsvp">
+      <div id="rsvp" className="rsvp">
         <h1 className="rsvp__header">RSVP</h1>
         <div className="rsvp__container">
           <p className="rsvp__sub-header">Please fill out the following form for your RSVP.<br /><span className="rsvp__underline">This form should be filled out for <strong>each</strong> guest.</span></p>
