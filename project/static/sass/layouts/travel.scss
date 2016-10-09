@@ -1,0 +1,32 @@
+.travel {
+  height: 100vh;
+  @include mobile-main-body();
+  &__header {
+    @include section-header();
+  }
+  &__sub-header {
+    @include sub-header();
+  }
+  &__detail-container {
+    @include column-container();
+  }
+  &__left-container {
+    @include column-left();
+  }
+  &__hotel-wording {
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+  &__hotel-address-container {
+    text-align: center;
+  }
+  &__right-container {
+    @include column-right();
+  }
+  &__airport-container {
+    padding-top: 5%;
+    @media screen and (max-width: $mobile) {
+      padding-top: 15%;
+    }
+  }
+}

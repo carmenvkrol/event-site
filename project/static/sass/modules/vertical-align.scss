@@ -1,0 +1,8 @@
+@mixin vertical-align () {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+     -o-transform: translateX(-50%);
+      transform: translateY(-50%);
+}

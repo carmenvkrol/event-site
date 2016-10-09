@@ -1,0 +1,128 @@
+.rsvp {
+  position: relative;
+  height: 100vh;
+  @include mobile-main-body();
+  &__container {
+    @include column-single();
+    left: 0;
+    right: 0;
+    @media screen and (max-width: $mobile) {
+      margin: 0 auto;
+      width: 90%;
+    }
+  }
+  &__container-done {
+    @include column-single();
+    @include vertical-align();
+    left: 0;
+    right: 0;
+    @media screen and (max-width: $mobile) {
+      margin: 0 auto;
+      width: 90%;
+    }
+  }
+  &__header {
+    @include section-header();
+  }
+  &__underline {
+    text-decoration: underline;
+  }
+  &__name-container {
+    margin: 0 auto;
+    width: 320px;
+    padding-top: 5%;
+    padding-bottom: 2%;
+    text-align: left;
+    @media screen and (max-width: $mobile) {
+      width: 250px;
+    }
+  }
+  &__error {
+    color: $red;
+  }
+  &__first-name-input,
+  &__last-name-input {
+    display: block;
+    margin: 0 auto;
+    width: 320px;
+    padding: 10px;
+    border: 1px solid $dark-blue;
+    font-family: $main-font;
+    font-size: 1em;
+    color: $dark-blue;
+    &.rsvp__error-input {
+      border-color: $red;
+      color: $red;
+    }
+    @media screen and (max-width: $mobile) {
+      width: 250px;
+    }
+  }
+  &__first-name-input {
+    margin-top: 3%;
+    margin-bottom: 3%;
+  }
+  &__checkbox-container {
+    @include clearfix();
+    margin: 0 auto;
+    width: 320px;
+    padding-top: 2%;
+    padding-bottom: 5%;
+    text-align: left;
+    @media screen and (max-width: $mobile) {
+      width: 250px;
+    }
+  }
+  &__checkbox-wording {
+    float: left;
+    vertical-align: top;
+    padding-right: 10px;
+    @media screen and (max-width: $mobile) {
+      float: none;
+      text-align: center;
+      font-size: 1.1em;
+    }
+  }
+  &__checkbox-action-container {
+    float: right;
+    @media screen and (max-width: $mobile) {
+      float: none;
+      text-align: center;
+    }
+  }
+  &__checkbox-label {
+    vertical-align: top;
+    padding-right: 5px;
+    &:nth-child(3) {
+      padding-left: 10px;
+    }
+  }
+  &__checkbox {
+    display: none;
+    &:checked + .rsvp__checkbox-visible:before {
+      content: '\2714';
+      position: absolute;
+      top: -1px;
+      left: 4px;
+    }
+  }
+  &__checkbox-visible {
+    height: 25px;
+    width: 25px;
+    border: 1px solid $dark-blue;
+    display: inline-block;
+    position: relative;
+  }
+  &__button {
+    @include button();
+  }
+}
+
+.rsvp__checkbox-container.rsvp__error-attend {
+  .rsvp__checkbox-wording, .rsvp__checkbox-label {
+    color: $red;
+  }
+  .rsvp__checkbox-visible {
+    border: 1px solid $red;
+  }
+}

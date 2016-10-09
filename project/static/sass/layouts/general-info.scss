@@ -1,0 +1,31 @@
+.general-info {
+  height: 100vh;
+  @include mobile-main-body();
+  &__header {
+    @include section-header();
+  }
+  &__event-container {
+    @include column-single();
+  }
+  &__wording {
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+  &__direction-container {
+    @include column-container();
+    padding-top: 5%;
+    width: 40%;
+  }
+  &__venue-container {
+    @include column-left();
+  }
+  &__map-container {
+    @include column-right();
+    iframe {
+      float: right;
+      @media screen and (max-width: $mobile) {
+        float: none;
+      }
+    }
+  }
+}

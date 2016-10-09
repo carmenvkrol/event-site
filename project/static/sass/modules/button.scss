@@ -1,0 +1,16 @@
+@mixin button() {
+  cursor: pointer;
+  display: block;
+  margin: 3% auto 0 auto;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid $blue;
+  background: $blue;
+  font-family: $title-font;
+  font-size: 1em;
+  color: $white;
+  &:hover {
+    background: $white;
+    color: $blue;
+  }
+}

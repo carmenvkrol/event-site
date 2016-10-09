@@ -1,0 +1,16 @@
+@mixin section-header () {
+  padding-top: 6%;
+  padding-bottom: 3%;
+  text-align: center;
+  font-family: $title-font;
+  font-size: 3em;
+  color: $blue;
+  @media screen and (max-width: $mobile) {
+    padding-top: 10%;
+  }
+}
+
+@mixin sub-header () {
+  text-align: center;
+  font-size: 2.4em;
+}

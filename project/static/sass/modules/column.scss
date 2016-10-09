@@ -1,0 +1,41 @@
+@mixin column-container () {
+  margin: 0 auto;
+  width: 80%;
+  @media screen and (max-width: $mobile) {
+    width: 100%;
+  }
+}
+
+@mixin column-right() {
+  float: right;
+  width: 45%;
+  @media screen and (max-width: $mobile) {
+    float: none;
+    margin: 0 auto;
+    width: 75%;
+    text-align: center;
+    padding-bottom: 10%;
+  }
+}
+
+@mixin column-left() {
+  float: left;
+  width: 45%;
+  @media screen and (max-width: $mobile) {
+    float: none;
+    margin: 0 auto;
+    width: 75%;
+    text-align: center;
+    padding-bottom: 10%
+  }
+}
+
+@mixin column-single() {
+  margin: 0 auto;
+  width: 50%;
+  text-align: center;
+  @media screen and (max-width: $mobile) {
+    width: 75%;
+    padding-bottom: 10%;
+  }
+}
