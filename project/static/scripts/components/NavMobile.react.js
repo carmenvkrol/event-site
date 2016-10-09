@@ -5,26 +5,30 @@ var NavMobile = React.createClass({
 
   render: function() {
     return (
-      <ul>
-        <li onClick={this.changeView.bind(this, 'landing')}>
+      <ul className="nav-mobile">
+        <li className="nav-mobile__close-link" onClick={this.props.clickHandler}>
+          X
+        </li>
+        <li className="nav-mobile__link" onClick={this.changeView.bind(this, 'landing')}>
           Home
         </li>
-        <li onClick={this.changeView.bind(this, 'general-info')}>
+        <li className="nav-mobile__link" onClick={this.changeView.bind(this, 'general-info')}>
           Event
         </li>
-        <li onClick={this.changeView.bind(this, 'rsvp')}>
+        <li className="nav-mobile__link" onClick={this.changeView.bind(this, 'rsvp')}>
           RSVP
         </li>
-        <li onClick={this.changeView.bind(this, 'travel')}>
+        <li className="nav-mobile__link" onClick={this.changeView.bind(this, 'travel')}>
           Travel
         </li>
-        <li onClick={this.changeView.bind(this, 'weekend-events')}>
+        <li className="nav-mobile__link" onClick={this.changeView.bind(this, 'weekend-events')}>
           Weekend Events
         </li>
       </ul>
     )
   },
   changeView: function(section) {
+    this.props.clickHandler();
     NavActions.showView(section);
   }
 

@@ -1,0 +1,12 @@
+@mixin hamburger($color) {
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0.5em;
+    left: 0;
+    width: 1.5em;
+    height: 0.250em;
+    border-top: 0.750em double $color;
+    border-bottom: 0.250em solid $color;
+  }
+}

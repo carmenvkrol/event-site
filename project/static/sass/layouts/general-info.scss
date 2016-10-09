@@ -1,5 +1,6 @@
 .general-info {
   height: 100vh;
+  @include mobile-main-body();
   &__header {
     @include section-header();
   }
@@ -22,6 +23,9 @@
     @include column-right();
     iframe {
       float: right;
+      @media screen and (max-width: $mobile) {
+        float: none;
+      }
     }
   }
 }

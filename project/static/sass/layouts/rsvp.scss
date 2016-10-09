@@ -1,16 +1,25 @@
 .rsvp {
   position: relative;
   height: 100vh;
+  @include mobile-main-body();
   &__container {
     @include column-single();
     left: 0;
     right: 0;
+    @media screen and (max-width: $mobile) {
+      margin: 0 auto;
+      width: 90%;
+    }
   }
   &__container-done {
     @include column-single();
     @include vertical-align();
     left: 0;
     right: 0;
+    @media screen and (max-width: $mobile) {
+      margin: 0 auto;
+      width: 90%;
+    }
   }
   &__header {
     @include section-header();
@@ -24,6 +33,9 @@
     padding-top: 5%;
     padding-bottom: 2%;
     text-align: left;
+    @media screen and (max-width: $mobile) {
+      width: 250px;
+    }
   }
   &__error {
     color: $red;
@@ -42,6 +54,9 @@
       border-color: $red;
       color: $red;
     }
+    @media screen and (max-width: $mobile) {
+      width: 250px;
+    }
   }
   &__first-name-input {
     margin-top: 3%;
@@ -54,14 +69,26 @@
     padding-top: 2%;
     padding-bottom: 5%;
     text-align: left;
+    @media screen and (max-width: $mobile) {
+      width: 250px;
+    }
   }
   &__checkbox-wording {
     float: left;
     vertical-align: top;
     padding-right: 10px;
+    @media screen and (max-width: $mobile) {
+      float: none;
+      text-align: center;
+      font-size: 1.1em;
+    }
   }
   &__checkbox-action-container {
     float: right;
+    @media screen and (max-width: $mobile) {
+      float: none;
+      text-align: center;
+    }
   }
   &__checkbox-label {
     vertical-align: top;

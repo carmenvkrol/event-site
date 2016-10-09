@@ -1,5 +1,6 @@
 .travel {
   height: 100vh;
+  @include mobile-main-body();
   &__header {
     @include section-header();
   }
@@ -24,5 +25,8 @@
   }
   &__airport-container {
     padding-top: 5%;
+    @media screen and (max-width: $mobile) {
+      padding-top: 15%;
+    }
   }
 }

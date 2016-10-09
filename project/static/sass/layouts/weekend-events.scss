@@ -1,6 +1,7 @@
 .weekend-events {
   height: 100vh;
   text-align: center;
+  @include mobile-main-body();
   &__header {
     @include section-header();
   }

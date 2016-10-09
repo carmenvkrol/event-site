@@ -7,6 +7,12 @@
   @media screen and (max-width: $ipad) {
     background-position: center top;
   }
+  @include mobile-main-body();
+  @media screen and (max-width: $mobile) {
+    top: 0;
+    background-image: url('img/jellies_mobile.jpg');
+    background-size: initial;
+  }
   &__overlay {
     position: absolute;
     top: 0;
@@ -29,8 +35,14 @@
   }
   &__name-wording {
     font-size: 3.6em;
+    @media screen and (max-width: $mobile) {
+      font-size: 2.4em;
+    }
   }
   &__date-wording {
     font-size: 3em;
+    @media screen and (max-width: $mobile) {
+      font-size: 2em;
+    }
   }
 }

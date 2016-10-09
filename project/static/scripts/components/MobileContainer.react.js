@@ -1,4 +1,6 @@
 var React = require('react');
+var classNames = require('classnames');
+
 var GeneralInfo = require('./GeneralInfo.react');
 var Landing = require('./Landing.react');
 var NavMobile = require('./NavMobile.react');
@@ -8,7 +10,7 @@ var WeekendEvents = require('./WeekendEvents.react');
 
 var MobileContainer = React.createClass({
 
-getInitialState: function() {
+  getInitialState: function() {
     return {
       menuActive: false
     }
@@ -36,9 +38,25 @@ getInitialState: function() {
     }
 
     return (
-      <div>
+      <div className={classNames({
+        'menu-active': this.state.menuActive
+      })}>
         <NavMobile clickHandler={this.toggleNav} />
-        <header onClick={this.toggleNav}></header>
+        <header className={classNames({
+          'header-active': this.props.mobileView !== 'landing',
+          'nav-mobile-header': true
+        })} onClick={this.toggleNav}>
+          <p className="nav-mobile-header__wording">
+            Jellyfish! 9/10/16
+          </p>
+          <div
+            className="nav-mobile-header__hamburger-container">
+            <div
+              className="nav-mobile-header__hamburger"
+              onClick={this.toggleNav}>
+            </div>
+          </div>
+        </header>
         {content}
       </div>
     )
