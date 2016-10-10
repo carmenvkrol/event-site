@@ -74,7 +74,6 @@ function writeDB() {
   _RSVPSubmitStatus = 'loading';
   RSVPStore.emitChange();
 
-  //TODO: set up api
   $.ajax({
     url: '/rsvp',
     method: 'post',
