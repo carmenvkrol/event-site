@@ -5,8 +5,6 @@ Single-page app built with [ReactJS](https://facebook.github.io/react/), [FluxJS
 
 The web application includes event information as well as a form for submitting RSVP information to a Postgre SQL database.
 
-Here's the [demo] (https://event-site.herokuapp.com).
-
 
 Configuration
 ------------
