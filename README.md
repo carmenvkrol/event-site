@@ -1,4 +1,5 @@
-NOTE: This repo is archived and no longer maintained.
+# ⛔️ DEPRECATED
+This repo is archived and no longer maintained.
 
 Event Site
 =============
