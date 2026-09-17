@@ -1,3 +1,5 @@
+NOTE: This repo is archived and no longer maintained.
+
 Event Site
 =============
 
